@@ -1,19 +1,14 @@
-const validator = require("validator");
-const bcrypt = require("bcryptjs");
-
-module.exports = (sequelize, DataTypes, Sequelize) => {
-  const book = sequelize.define("book", {
-    Id: {
-      type: DataTypes.INTEGER(10),
+module.exports = (sequelize, DataTypes) => {
+  const Book = sequelize.define("Book", {
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
     },
-
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      
     },
     author: {
       type: DataTypes.STRING,
@@ -35,9 +30,9 @@ module.exports = (sequelize, DataTypes, Sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-
+  }, {
     timestamps: true
   });
 
-  return book;
+  return Book;
 };

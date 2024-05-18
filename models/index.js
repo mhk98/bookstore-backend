@@ -1,4 +1,3 @@
-
 const db = require("../db/db");
 const { DataTypes } = require("sequelize");
 
@@ -11,8 +10,6 @@ db.sequelize
     console.log("Error on re-synced", err);
   });
 
-
 db.book = require("./book/book")(db.sequelize, DataTypes);
-
 
 module.exports = db;
